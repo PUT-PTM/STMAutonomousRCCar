@@ -1,16 +1,14 @@
 #include "interupt.h"
 #include"czujniki.h"
+
 void TIM2_IRQHandler(void)
 {
-
 	 if(TIM_GetITStatus(TIM2, TIM_IT_Update)!=RESET)
 	 {
-
 		 timeDelay--;
 		 if(timeDelay==0)
 		 			 TIM_Cmd(TIM2, DISABLE);
 		 TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
-
 	 }
 }
 
@@ -18,17 +16,13 @@ void TIM3_IRQHandler(void)
 {
 	 if(TIM_GetITStatus(TIM3, TIM_IT_Update)!=RESET)
 	 {
-		 GPIO_ResetBits(GPIOE,GPIO_Pin_10);
+		GPIO_ResetBits(GPIOE,GPIO_Pin_10);
 		TIM_Cmd(TIM3, DISABLE);
 		TIM_SetCounter(TIM3, 0);
-
 		TIM_SetCounter(TIM7, 0);
 		TIM_Cmd(TIM7, ENABLE);
-
-
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 	 }
-
 }
 
 void uruchomPomiar()
@@ -58,26 +52,22 @@ void TIM7_IRQHandler(void)
 	 if(TIM_GetITStatus(TIM7, TIM_IT_Update)!=RESET)
 	 {
 		 TIM_Cmd(TIM7, DISABLE);
-
 		 if(!leftForwardMeasureComplete)
 		 {
 			 leftForwardMeasureComplete=true;
-			 odlegloscLeftForward=1;
+			 obstacleNoDetected(&odlegloscLeftForward,&probaPomiaruLeftForward);
 		 }
-
 		 if(!centerForwardMeasureComplete)
 		 {
 			 centerForwardMeasureComplete=true;
-			 odlegloscCenterForward=1;
+			 obstacleNoDetected(&odlegloscCenterForward,&probaPomiaruCenterForward);
 		 }
-
 		 if(!rightForwardMeasureComplete)
 		 {
 			 rightForwardMeasureComplete=true;
-			 odlegloscRightForward=1;
+			 obstacleNoDetected(&odlegloscRightForward,&probaPomiaruRightForward);
 		 }
 		 TIM_ClearITPendingBit(TIM7, TIM_IT_Update);
-
 	 }
 
 }
@@ -86,27 +76,21 @@ void EXTI9_5_IRQHandler(void)
 {
 	if(EXTI_GetITStatus(EXTI_Line5) != RESET)
 	{
-
-		measureDistance(&odlegloscCenterForward,GPIOE,GPIO_Pin_5,&CzujnikLine5Start,&CzujnikLine5Stop,&centerForwardMeasureComplete);
+		measureDistance(&odlegloscCenterForward,GPIOE,GPIO_Pin_5,&CzujnikLine5Start,&CzujnikLine5Stop,&centerForwardMeasureComplete,&probaPomiaruCenterForward);
 		EXTI_ClearITPendingBit(EXTI_Line5);
 	}
 	if(EXTI_GetITStatus(EXTI_Line6) != RESET)
 	{
-
-		measureDistance(&odlegloscLeftForward,GPIOE,GPIO_Pin_6,&CzujnikLine6Start,&CzujnikLine6Stop,&leftForwardMeasureComplete);
+		measureDistance(&odlegloscRightForward,GPIOE,GPIO_Pin_6,&CzujnikLine6Start,&CzujnikLine6Stop,&rightForwardMeasureComplete,&probaPomiaruRightForward);
 		EXTI_ClearITPendingBit(EXTI_Line6);
 	}
-
-
 }
 
 void EXTI4_IRQHandler(void)
 {
 	if(EXTI_GetITStatus(EXTI_Line4) != RESET)
 	{
-		measureDistance(&odlegloscRightForward,GPIOE,GPIO_Pin_4,&CzujnikLine4Start,&CzujnikLine4Stop,&rightForwardMeasureComplete);
-
+		measureDistance(&odlegloscLeftForward,GPIOE,GPIO_Pin_4,&CzujnikLine4Start,&CzujnikLine4Stop,&leftForwardMeasureComplete,&probaPomiaruLeftForward);
 	EXTI_ClearITPendingBit(EXTI_Line4);
 	}
-
 }

@@ -79,17 +79,17 @@
     <File name="cmsis_lib/include/stm32f4xx_syscfg.h" path="cmsis_lib/include/stm32f4xx_syscfg.h" type="1"/>
     <File name="project_Lib/source/Czujniki.c" path="Project_lib/source/Czujniki.c" type="1"/>
     <File name="project_Lib/include/GPIO_Configuration.h" path="Project_lib/include/GPIO_Configuration.h" type="1"/>
-    <File name="project_Lib/source/Interupt.c" path="Project_lib/source/Interupt.c" type="1"/>
     <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
+    <File name="project_Lib/source/Interupt.c" path="Project_lib/source/Interupt.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_spi.c" path="cmsis_lib/source/stm32f4xx_spi.c" type="1"/>
     <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
     <File name="cmsis/core_cm4.h" path="cmsis/core_cm4.h" type="1"/>
     <File name="cmsis_lib/source/misc.c" path="cmsis_lib/source/misc.c" type="1"/>
-    <File name="project_Lib/include/Interupt.h" path="Project_lib/include/Interupt.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_adc.c" path="cmsis_lib/source/stm32f4xx_adc.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_tim.h" path="cmsis_lib/include/stm32f4xx_tim.h" type="1"/>
+    <File name="project_Lib/include/Interupt.h" path="Project_lib/include/Interupt.h" type="1"/>
     <File name="cmsis_lib/source" path="" type="2"/>
     <File name="project_Lib" path="" type="2"/>
     <File name="project_Lib/include/PS2Controller.h" path="Project_lib/include/PS2Controller.h" type="1"/>
@@ -106,8 +106,8 @@
     <File name="project_Lib/include/TIMER.h" path="Project_lib/include/TIMER.h" type="1"/>
     <File name="project_Lib/source" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_adc.h" path="cmsis_lib/include/stm32f4xx_adc.h" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_spi.h" path="cmsis_lib/include/stm32f4xx_spi.h" type="1"/>
     <File name="project_Lib/source/GPIO_Configuration.c" path="Project_lib/source/GPIO_Configuration.c" type="1"/>
@@ -116,8 +116,8 @@
     <File name="project_Lib/source/Algorytm.c" path="Project_lib/source/Algorytm.c" type="1"/>
     <File name="cmsis_lib" path="" type="2"/>
     <File name="project_Lib/include/Algorytm.h" path="Project_lib/include/Algorytm.h" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
     <File name="project_Lib/include/ADC_Configuration.h" path="Project_lib/include/ADC_Configuration.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
     <File name="project_Lib/include/EnginePower.h" path="Project_lib/include/EnginePower.h" type="1"/>
     <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>

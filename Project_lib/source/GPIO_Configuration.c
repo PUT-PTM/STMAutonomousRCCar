@@ -1,4 +1,11 @@
 #include "GPIO_Configuration.h"
+
+/*
+ * Konfiguracja pinow przechwytujacych sygnal zwrotny z czojnikow odleglosci
+ * 			Left	Center	Right
+ * PRZOD 	4 		5		6
+ * TYL		7		8		9
+ */
 void GPIO_CzujnikUltradzwiekowy()
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
@@ -16,6 +23,10 @@ void GPIO_CzujnikUltradzwiekowy()
 	GPIO_Init(GPIOE, &GPIO_InitStructure);
 
 }
+/*
+ * Konfiguracja pinow odpowiedzialnych za sterowanie sygnalami wejsciowymi,
+ *  podawanymi na wejscia sterownika silnikow.
+ */
 void GPIO_MostekHConfiguration()
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
@@ -28,6 +39,9 @@ void GPIO_MostekHConfiguration()
 	GPIO_Init(GPIOE, &GPIO_InitStructure);
 }
 
+/*
+ * Konfiguracja pinów wyjciowych sygna³u PWM
+ */
 void GPIO_PWM_SignalConfiguration()
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD , ENABLE);
@@ -41,6 +55,9 @@ void GPIO_PWM_SignalConfiguration()
 		GPIO_Init(GPIOD, &GPIO_InitStructure);
 }
 
+/*
+ * konfiguracja pinu slaveSelect interfejsu SPI odpowiedzialnego za PS2 Controller
+ */
 void GPIO_SPI_ChipSelectConfiguration()
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE , ENABLE);
@@ -52,6 +69,13 @@ void GPIO_SPI_ChipSelectConfiguration()
 		GPIO_Init(GPIOE, &GPIO_InitStructure3);
 }
 
+/*
+ * konfiguracja pinów interfejsu SPI
+ * CLOCK	-	PB13
+ * MISO		-	PB14
+ * MOSI		-	PB15
+ * lub na odwrót MISO Z MOSI Zweryfikowac :P
+ */
 void GPIO_SPI()
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB , ENABLE);
@@ -70,15 +94,21 @@ void GPIO_SPI()
 		GPIO_PinAFConfig(GPIOB, GPIO_PinSource15, GPIO_AF_SPI2);
 }
 
+/*
+ * Wywo³anie procedur konfigurujacych interfejs SPI
+ */
 void GPIO_SPI_Configuration()
 {
 	GPIO_SPI();
 	GPIO_SPI_ChipSelectConfiguration();
 }
+
+/*
+ * Konfiguracja przetwornika Analogowo cyfrowego do kontrolowania poziomu naladowania ogniw
+ */
 void GPIO_ADC_Configuration()
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA , ENABLE); // zegar dla portu GPIO z którego wykorzystany zostanie pin jako wejœcie ADC (PA1)
-
 	GPIO_InitTypeDef GPIO_InitStructure;
 	//inicjalizacja wejœcia ADC
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
@@ -86,9 +116,14 @@ void GPIO_ADC_Configuration()
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
+
+/*
+ * Konfiguracja pinu sterujacego bramka MOSFETA
+ * Podanie 0 otwiera obwod zasilanie z ogniw jest odcinanie
+ * Podanie 1 obwod jest zamknety
+ */
 void GPIO_OutMOSFETBasePin()
 {
-
 	GPIO_InitTypeDef GPIO_InitStructure;
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
@@ -96,9 +131,11 @@ void GPIO_OutMOSFETBasePin()
 	GPIO_Init(GPIOE, &GPIO_InitStructure);
 }
 
+/*
+ * Wywolanie procedur konfiguracych piny wykorzystywane przez peryyferia
+ */
 void GPIO_Configuration()
 {
-
 	GPIO_PWM_SignalConfiguration();
 	GPIO_MostekHConfiguration();
 	GPIO_SPI_Configuration();

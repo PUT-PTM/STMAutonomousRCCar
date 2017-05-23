@@ -24,7 +24,11 @@ int CzujnikLine6Stop;
 bool leftForwardMeasureComplete;
 bool centerForwardMeasureComplete;
 bool rightForwardMeasureComplete;
+////////////////////////////////////////////////////////////////
 
+unsigned short probaPomiaruLeftForward;
+unsigned short probaPomiaruCenterForward;
+unsigned short probaPomiaruRightForward;
 ///////////////////////////////////////////////
 float odlegloscRightForward;
 float odlegloscCenterForward;

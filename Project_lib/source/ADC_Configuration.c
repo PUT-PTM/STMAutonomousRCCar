@@ -1,5 +1,8 @@
 #include "ADC_Configuration.h"
 
+/*
+ *
+ */
 void adcConfiguration2()
 {
 	ADC_CommonInitTypeDef ADC_CommonInitStructure;
@@ -14,6 +17,9 @@ void adcConfiguration2()
 		ADC_CommonInit(&ADC_CommonInitStructure);
 }
 
+/*
+ *
+ */
 void adcConfiguration1()
 {
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE); // zegar dla modu³u ADC1
@@ -43,6 +49,9 @@ void adcConfiguration1()
 
 }
 
+/*
+ *
+ */
 void adcConfiguration()
 {
 

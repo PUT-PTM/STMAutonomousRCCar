@@ -109,7 +109,7 @@ void timer5Configuration()
 {
 		RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5, ENABLE);
 
-			int freload =20; 							//czas po którym nastepuje przepelnienie licznika
+			int freload =16; 							//czas po którym nastepuje przepelnienie licznika
 			int Period=9999; 							//pojemnosc liczika
 
 			//KOONFIGURACJA IMPULSÓW

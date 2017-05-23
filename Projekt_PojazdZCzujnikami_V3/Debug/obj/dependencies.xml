@@ -1,115 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dependencies>
-   <includePath signature="/IC:\Users\Neliel Esp\Documents\PTM PROJECT /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\cmsis /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\cmsis_boot /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\cmsis_lib /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\Project_lib\include /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\Project_lib /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\cmsis_lib\include /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami">
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="15af54db80b">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\source\Interupt.c" lastModified="15c30abe30e">
-         <include file="..\..\..\Project_lib\include\Interupt.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_syscfg.h" lastModified="15af54de702">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="15af54ddd1c">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\source\ADC_Configuration.c" lastModified="15bf39c128a">
-         <include file="..\..\..\Project_lib\include\ADC_Configuration.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="15af54de703">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_syscfg.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15af54ddd1c">
-         <include file="..\..\..\cmsis_lib\include\misc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="15af54db4b1">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="15af54db4b0">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="15bf37df0a9">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\include\Algorytm.h" lastModified="15c03ea61f1">
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h" lastModified="15bf37df099">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\include\ADC_Configuration.h" lastModified="15bf3dcf6b7">
-         <include file="..\..\..\Project_lib\include\GPIO_Configuration.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\source\EnginePower.c" lastModified="15c30abe309">
-         <include file="..\..\..\Project_lib\include\EnginePower.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\include\GPIO_Configuration.h" lastModified="15bf66c4fa7">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h" lastModified="15af54dbc7d">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="15af54db80a">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="15af54dc8cb">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h" lastModified="15af54dc8cb">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\main.c" lastModified="15c30abe345">
-         <include file="..\..\..\Project_lib\include\Interupt.h"/>
-         <include file="..\..\..\Project_lib\include\GPIO_Configuration.h"/>
-         <include file="..\..\..\Project_lib\include\PS2Controller.h"/>
-         <include file="..\..\..\Project_lib\include\ADC_Configuration.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\source\TIMER.c" lastModified="15c30cb99b9">
-         <include file="..\..\..\Project_lib\include\TIMER.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\source\GPIO_Configuration.c" lastModified="15c30abe30b">
-         <include file="..\..\..\Project_lib\include\GPIO_Configuration.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\source\PS2Controller.c" lastModified="15c30abe30f">
-         <include file="..\..\..\Project_lib\include\PS2Controller.h"/>
-         <include file="..\..\..\Project_lib\include\EnginePower.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\source\Algorytm.c" lastModified="15c060368b3">
-         <include file="..\..\..\Project_lib\include\Algorytm.h"/>
-      </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="15af54db4d8">
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="15af54dcbc5">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="15af54db4c8">
-      </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="15af54dcbc5">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="157af0820c0">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="15af54dbc7e">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\include\TIMER.h" lastModified="15c30cb9958">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-   </includePath>
    <includePath signature="/IC:\Users\Neliel Esp\Documents\PTM PROJECT\AutonomousCar\STMAutonomousRCCar\cmsis /IC:\Users\Neliel Esp\Documents\PTM PROJECT\AutonomousCar\STMAutonomousRCCar\Project_lib\include /IC:\Users\Neliel Esp\Documents\PTM PROJECT\AutonomousCar\STMAutonomousRCCar /IC:\Users\Neliel Esp\Documents\PTM PROJECT\AutonomousCar /IC:\Users\Neliel Esp\Documents\PTM PROJECT\AutonomousCar\STMAutonomousRCCar\Project_lib /IC:\Users\Neliel Esp\Documents\PTM PROJECT\AutonomousCar\STMAutonomousRCCar\cmsis_lib /IC:\Users\Neliel Esp\Documents\PTM PROJECT\AutonomousCar\STMAutonomousRCCar\cmsis_lib\include /IC:\Users\Neliel Esp\Documents\PTM PROJECT\AutonomousCar\STMAutonomousRCCar\cmsis_boot">
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="15af54db80b">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\Project_lib\source\Interupt.c" lastModified="15c30abe30e">
+      <source file="..\..\..\Project_lib\source\Interupt.c" lastModified="15c35000144">
          <include file="..\..\..\Project_lib\include\Interupt.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_syscfg.h" lastModified="15af54de702">
@@ -118,7 +14,7 @@
       <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="15af54ddd1c">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\Project_lib\source\ADC_Configuration.c" lastModified="15bf39c128a">
+      <source file="..\..\..\Project_lib\source\ADC_Configuration.c" lastModified="15c35000173">
          <include file="..\..\..\Project_lib\include\ADC_Configuration.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="15af54de703">
@@ -130,6 +26,10 @@
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="15af54db4b1">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\Project_lib\source\interuptHandle.c" lastModified="15c3574e4d7">
+         <include file="..\..\..\Project_lib\include\Interupt.h"/>
+         <include file="..\..\..\Project_lib\include\Czujniki.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="15af54db4b0">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
@@ -151,7 +51,7 @@
       </source>
       <source file="..\..\..\cmsis\core_cm4_simd.h" lastModified="15af54db8d0">
       </source>
-      <source file="..\..\..\Project_lib\include\Interupt.h" lastModified="15bf3892b65">
+      <source file="..\..\..\Project_lib\include\Interupt.h" lastModified="15c3558c146">
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
          <include file="..\..\..\Project_lib\include\TIMER.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h"/>
@@ -163,8 +63,8 @@
          <include file="..\..\..\cmsis_boot\system_stm32f4xx.h"/>
          <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
       </source>
-      <source file="..\..\..\Project_lib\source\EnginePower.c" lastModified="15c30abe309">
-         <include file="..\..\..\Project_lib\include\EnginePower.h"/>
+      <source file="..\..\..\Project_lib\source\Czujniki.c" lastModified="15c357824c5">
+         <include file="..\..\..\Project_lib\include\Czujniki.h"/>
       </source>
       <source file="..\..\..\Project_lib\include\GPIO_Configuration.h" lastModified="15bf66c4fa7">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
@@ -198,16 +98,16 @@
       </source>
       <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="15af54db8d0">
       </source>
-      <source file="..\..\..\main.c" lastModified="15c30abe345">
+      <source file="..\..\..\main.c" lastModified="15c3558bdb3">
          <include file="..\..\..\Project_lib\include\Interupt.h"/>
          <include file="..\..\..\Project_lib\include\GPIO_Configuration.h"/>
          <include file="..\..\..\Project_lib\include\PS2Controller.h"/>
          <include file="..\..\..\Project_lib\include\ADC_Configuration.h"/>
       </source>
-      <source file="..\..\..\Project_lib\source\TIMER.c" lastModified="15c30cb99b9">
+      <source file="..\..\..\Project_lib\source\TIMER.c" lastModified="15c357e8191">
          <include file="..\..\..\Project_lib\include\TIMER.h"/>
       </source>
-      <source file="..\..\..\Project_lib\source\GPIO_Configuration.c" lastModified="15c30abe30b">
+      <source file="..\..\..\Project_lib\source\GPIO_Configuration.c" lastModified="15c34fb6701">
          <include file="..\..\..\Project_lib\include\GPIO_Configuration.h"/>
       </source>
       <source file="..\..\..\Project_lib\include\EnginePower.h" lastModified="15c01b1a456">
@@ -215,9 +115,12 @@
          <include file="..\..\..\Project_lib\include\PS2Controller.h"/>
          <include file="..\..\..\Project_lib\include\Interupt.h"/>
       </source>
-      <source file="..\..\..\Project_lib\source\PS2Controller.c" lastModified="15c30abe30f">
+      <source file="..\..\..\Project_lib\source\PS2Controller.c" lastModified="15c3485cba3">
          <include file="..\..\..\Project_lib\include\PS2Controller.h"/>
          <include file="..\..\..\Project_lib\include\EnginePower.h"/>
+      </source>
+      <source file="..\..\..\Project_lib\include\Czujniki.h" lastModified="15c356634bf">
+         <include file="..\..\..\Project_lib\include\Interupt.h"/>
       </source>
       <source file="..\..\..\Project_lib\source\Algorytm.c" lastModified="15c060368b3">
          <include file="..\..\..\Project_lib\include\Algorytm.h"/>
@@ -226,6 +129,85 @@
          <include file="..\..\..\cmsis\core_cmInstr.h"/>
          <include file="..\..\..\cmsis\core_cmFunc.h"/>
          <include file="..\..\..\cmsis\core_cm4_simd.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="15af54db4d8">
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="15af54dcbc5">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="15af54db4c8">
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="15af54dcbc5">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="157af0820c0">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="15af54dbc7e">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h"/>
+      </source>
+      <source file="..\..\..\Project_lib\include\TIMER.h" lastModified="15c30cb9958">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+   </includePath>
+   <includePath signature="/IC:\Users\Neliel Esp\Documents\PTM PROJECT /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\cmsis /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\cmsis_boot /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\cmsis_lib /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\Project_lib\include /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\Project_lib /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami\cmsis_lib\include /IC:\Users\Neliel Esp\Documents\PTM PROJECT\Pojazd czujnikami">
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="15af54db80b">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_syscfg.h" lastModified="15af54de702">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="15af54ddd1c">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="15af54de703">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_syscfg.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15af54ddd1c">
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="15af54db4b1">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="15af54db4b0">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="15bf37df0a9">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\Project_lib\include\Algorytm.h" lastModified="15c03ea61f1">
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h" lastModified="15bf37df099">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\Project_lib\include\ADC_Configuration.h" lastModified="15bf3dcf6b7">
+         <include file="..\..\..\Project_lib\include\GPIO_Configuration.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h"/>
+      </source>
+      <source file="..\..\..\Project_lib\include\GPIO_Configuration.h" lastModified="15bf66c4fa7">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h" lastModified="15af54dbc7d">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="15af54db80a">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="15af54dc8cb">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h" lastModified="15af54dc8cb">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\Project_lib\source\Algorytm.c" lastModified="15c060368b3">
+         <include file="..\..\..\Project_lib\include\Algorytm.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="15af54db4d8">
       </source>

@@ -1,4 +1,13 @@
 #include"EnginePower.h"
+//////////////////////////////////////////////////////////////////////////////////////////////////////////s
+/*
+ * 									DO POPRAWY
+ *
+ * ZREDUKOWAC REDUNDANCJE W KODZIE POPRZEZ SKORZYSTANIE Z FUNKCJI PRZEKAZUJACYCH ZMIENNE JAKO
+ * PARAMETTY PRZEZ WSKAZNIK. W RAZIE MOZLIWOSCI SKORZYSTAC Z ENUM ZAMIAST WARTOSCI WPISYWANYCH NA
+ * STYWNO.	ZNALESC WSZYSTKIE MOZLIWE OPCJE GDZIE ZASTOSOWAC STALE ZAMIAST ZMIENNYCH(TO SAMO CO DO ENUM)
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void setChannelLeft(bool B1, bool B2)
 {

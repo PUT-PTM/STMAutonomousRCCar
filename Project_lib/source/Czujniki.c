@@ -13,38 +13,46 @@ float temporaryDistance;
  * 	4 - WskaŸnik na zmienna przechowuj¹ca koncowa wartosc licznika
  *
  */
-void measureDistance(float *Distance,GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, int *start, int *stop,bool *isMeasureComplete)
+void measureDistance(float *Distance,GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, int *start, int *stop,bool *isMeasureComplete,unsigned short *tryNumber)
 {
 	if(!(*isMeasureComplete)){
 		if(GPIO_ReadInputDataBit(GPIOx,GPIO_Pin))
+		{
+				*start=TIM7->CNT;
+		}
+		else
+		{
+			*stop=TIM7->CNT;
+			if((*stop-*start)>0)
 			{
-					*start=TIM7->CNT;
+				 temporaryDistance= (((((float)(*stop-*start))/(TIM7->ARR+1))/czestotliwoscTimeraPomiarowego)*170);
+				 if(temporaryDistance<0.05)
+				 {
+					 *Distance= 0.05;
+				 }
+				 else
+				 {
+					 *Distance= temporaryDistance;
+				 }
+				 *tryNumber=0;
 			}
-			else
-			{
-				*stop=TIM7->CNT;
-				if((*stop-*start)>0)
-				{
-					*isMeasureComplete=true;
-					 temporaryDistance= (((((float)(*stop-*start))/(TIM7->ARR+1))/czestotliwoscTimeraPomiarowego)*170);
-					 if(temporaryDistance<0.05)
-					 {
-						 *Distance= 0.05;
-					 }
-					 else
-					 {
-						 *Distance= temporaryDistance;
-					 }
-				}
-				else
-				{
-					*Distance=1;
-				}
-			}
+			*isMeasureComplete=true;
+		}
+	}
+}
+
+/*
+ *
+ */
+void obstacleNoDetected(float *Distance,unsigned short *tryNumber)
+{
+	if(*tryNumber>10)
+	{
+		*Distance=1;
 	}
 	else
 	{
-		*Distance=1;
+		*tryNumber=*tryNumber+1;
 	}
 
 }

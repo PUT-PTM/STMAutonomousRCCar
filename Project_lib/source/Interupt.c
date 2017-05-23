@@ -1,7 +1,8 @@
-
 #include "interupt.h"
-////////////////////////////////////////////////////////////////////
 
+/*
+ *
+ */
 void EXTI_Line_4()
 {
 	//zasilanie
@@ -16,6 +17,10 @@ void EXTI_Line_4()
 
 	 SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOE, EXTI_PinSource4);
 }
+
+/*
+ *
+ */
 void EXTI_Line_5()
 {
 	//zasilanie
@@ -30,6 +35,10 @@ void EXTI_Line_5()
 
 	 SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOE, EXTI_PinSource5);
 }
+
+/*
+ *
+ */
 void EXTI_Line_6()
 {
 	//zasilanie
@@ -44,71 +53,21 @@ void EXTI_Line_6()
 
 	 SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOE, EXTI_PinSource6);
 }
+
+/*
+ *
+ */
 void extiConfiguration()
 {
 	EXTI_Line_4();
 	EXTI_Line_5();
 	EXTI_Line_6();
 }
-//
-//void EXTI4_IRQHandler(void)
-//	{
-//		if(EXTI_GetITStatus(EXTI_Line4) != RESET)
-//		{
-//			if(GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_4)){
-//
-//					CzujnikLine4Start=TIM7->CNT;
-//								TIM_Cmd(TIM7, ENABLE);
-//				}
-//				else
-//				{
-//					CzujnikLine4Stop=TIM7->CNT;
-//					odleglosc=(float)(CzujnikLine4Stop-CzujnikLine4Start)/TIM7->ARR/czstotliwoscLicznikaPomiarowego*170;
-//			//		TIM4->CCR2=(1-odleglosc)*TIM4->ARR;
-//				}
-//				EXTI_ClearITPendingBit(EXTI_Line4);
-//
-//
-//		}
-//	}
-
-//void EXTI9_5_IRQHandler(void)
-//{
-//	if(EXTI_GetITStatus(EXTI_Line5) != RESET)
-//	{
-//		if(GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_5)){
-//
-//			CzujnikLine5Start=TIM7->CNT;
-//						TIM_Cmd(TIM7, ENABLE);
-//		}
-//		else
-//		{
-//			CzujnikLine5Stop=TIM7->CNT;
-//			odleglosc2=(float)(CzujnikLine5Stop-CzujnikLine5Start)/TIM7->ARR/czstotliwoscLicznikaPomiarowego*170;
-//			//TIM4->CCR3=(1-odleglosc2)*TIM4->ARR;
-//		}
-//		EXTI_ClearITPendingBit(EXTI_Line5);
-//	}
-//
-//	if(EXTI_GetITStatus(EXTI_Line6) != RESET)
-//		{
-//
-//			if(GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_6)){
-//				TIM4->CCR2=TIM4->ARR;
-//				CzujnikLine6Start=TIM7->CNT;
-//							TIM_Cmd(TIM7, ENABLE);
-//			}
-//			else
-//			{
-//				CzujnikLine6Stop=TIM7->CNT;
-//				odleglosc3=(float)(CzujnikLine6Stop-CzujnikLine6Start)/TIM7->ARR/czstotliwoscLicznikaPomiarowego*170;
-////				TIM4->CCR3=(1-odleglosc)*TIM4->ARR;
-//			}
-//			EXTI_ClearITPendingBit(EXTI_Line6);
-//		}
-//}
 
 ////////////////////////////////////////////////////////////////////
+/*
+ *
+ */
 void interiptEXTILine4()
 {
 	NVIC_InitTypeDef NVIC_InitStructure;
@@ -119,6 +78,10 @@ void interiptEXTILine4()
 			NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	// uruchom dany kana³
 			NVIC_Init(&NVIC_InitStructure);// zapisz wype³nion¹ strukturê do rejestrów
 }
+
+/*
+ *
+ */
 void interiptEXTILine9_5()
 {
 	NVIC_InitTypeDef NVIC_InitStructure;
@@ -129,11 +92,19 @@ void interiptEXTILine9_5()
 			NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	// uruchom dany kana³
 			NVIC_Init(&NVIC_InitStructure);// zapisz wype³nion¹ strukturê do rejestrów
 }
+
+/*
+ *
+ */
 void interuptEXTI()
 {
 	interiptEXTILine4();
 	interiptEXTILine9_5();
 }
+
+/*
+ *
+ */
 void interuptTimer2()
 {
 	NVIC_InitTypeDef NVIC_InitStructure;
@@ -143,6 +114,10 @@ void interuptTimer2()
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	// uruchom dany kana³
 	NVIC_Init(&NVIC_InitStructure);// zapisz wype³nion¹ strukturê do rejestrów
 }
+
+/*
+ *
+ */
 void interuptTimer3()
 {
 	NVIC_InitTypeDef NVIC_InitStructure;
@@ -152,6 +127,10 @@ void interuptTimer3()
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	// uruchom dany kana³
 	NVIC_Init(&NVIC_InitStructure);// zapisz wype³nion¹ strukturê do rejestrów
 }
+
+/*
+ *
+ */
 void interuptTimer5()
 {
 	NVIC_InitTypeDef NVIC_InitStructure;
@@ -161,6 +140,10 @@ void interuptTimer5()
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	// uruchom dany kana³
 	NVIC_Init(&NVIC_InitStructure);// zapisz wype³nion¹ strukturê do rejestrów
 }
+
+/*
+ *
+ */
 void interuptTimer7()
 {
 	NVIC_InitTypeDef NVIC_InitStructure;
@@ -170,6 +153,10 @@ void interuptTimer7()
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	// uruchom dany kana³
 	NVIC_Init(&NVIC_InitStructure);// zapisz wype³nion¹ strukturê do rejestrów
 }
+
+/*
+ *
+ */
 void interuptConfigurations(void)
 {
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);

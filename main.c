@@ -15,6 +15,11 @@ void defineGlobalVarablies()
 	uint8_t counterButton=0;
 	int czyDostepnaJestZmiana = 0;
 	int Zasilanie = 0;
+
+	////////////////
+	probaPomiaruLeftForward=0;
+	probaPomiaruCenterForward=0;
+	probaPomiaruRightForward=0;
 }
 void configuration()
 {

@@ -1,6 +1,6 @@
 #include"PS2Controller.h"
 #include"EnginePower.h"
-int EZERO=0;
+int EZERO=0;//DEBUG POZBYC SIE W PRZYSZLOSCI
 /*
  * Konfiguruje interfejs SPI do obs³ugi GAMEPADA
  */
@@ -61,22 +61,19 @@ unsigned char pad_byte(unsigned char byte)
 void pad_cmd(unsigned char t[],unsigned int n)
 {
    unsigned int i;
-//ATT RESET
+   //ATT RESET
    GPIO_ResetBits(GPIOE,GPIO_Pin_11);
- //  PrzepiszDoZmiennychGlobalnychZawartoscTablicy();
-//   mDelay(2000);
    for(i=0; i<n; i++)
    {
 	   t[i]= pad_byte(t[i]);
 	   PrzepiszDoZmiennychGlobalnychZawartoscTablicy();
    }
-//ATT SET
+   //ATT SET
    PrzepiszDoZmiennychGlobalnychZawartoscTablicy();
    GPIO_SetBits(GPIOE,GPIO_Pin_11);
- //  mDelay(2000);
    uDelay(50);
 }
-//---------------------------------------------------------------------------
+
 /*
  * Pobiera informacje na temat stanu Gapmepada
  */
@@ -99,6 +96,10 @@ void padPoll()
 	mDelay(50);
 
 }
+/*
+ * Wymusza przejscie pada do trybu analogowego
+ * Umozliwa korzystanie z analogow z funkconalnoscia przechwycenia stopnia wychlenia
+ */
 void padGoIntoAnalogMode()
 {
 	  // Prze³¹czamy gamepada w tryb analogowy, aby mieæ
@@ -147,6 +148,7 @@ void padExitConfigurationMode()
 	   tabConfig[8] = 0x5A;
 	   pad_cmd(tabConfig, 9);
 }
+
 /*
  * Podstawowa konfiguracja gamepada
  */
@@ -160,11 +162,12 @@ void pad_config(void)
    padConifgured=true;
 
 }
+
 //---------------------------------------------------------------------------
 //Odczytywanie Przycisków Sprawdzanie pojedyñczych bitów
 bool sprawdzBajt(uint8_t poleWtablicy,uint8_t bajt)
 {
-	int maska=1;
+	int maska=1;//Zmienic na zmienna globalna tutaj tylko przywracac wartosc
 	for(int i=0; i<bajt;i++)
 		maska*=2;
 	if((tabConfig[poleWtablicy]&maska) == 0)
@@ -175,7 +178,9 @@ bool sprawdzBajt(uint8_t poleWtablicy,uint8_t bajt)
 //---------------------------------------------------------------------------
 //Dzia³a
 
-
+/*
+ * Sprawdza bit odpowiedzialny za zwiekszenie maksymanej mocy przekazywanych do silnikow
+ */
 void sprawdzNitro()
 {
 	if(sprawdzBajt(Shape,R2))
@@ -190,7 +195,7 @@ void sprawdzNitro()
 	}
 }
 
-
+//PROBLEMY Z STEROWANIEM PRZY UZYCIU MOSFETA POMYSL ODLOZONY
 /*
  * Funkcja steruje pinem po³¹czonym z bramka tranzystora
  * Obsuguje przycisk w formie przerzutnika pistabilnego
@@ -200,12 +205,12 @@ void turnOffPower()
 {
 	if(sprawdzBajt(CrossFunction,START ))
 	{
-		if(counterButton<0)
+		if(counterButton<0)//CO TO MA BYC :P
 		{
+			//DEBUG
 			//PRAWDOPODBNIE TEN IF JEST ZBEDY
 			counterButton++;
 		}
-
 		else
 		{
 			if(availableChangePowerSuplyStatus)
@@ -222,23 +227,22 @@ void turnOffPower()
 				}
 				availableChangePowerSuplyStatus=false;
 			}
-
 		}
-
-
 	}
 	else
 	{
 		counterButton=0;
 		availableChangePowerSuplyStatus=true;
 	}
+	//DEBUG
 	czyDostepnaJestZmiana=availableChangePowerSuplyStatus;
 	Zasilanie=powerSuply;
 }
+
 /*
  * Sprawdza jakie polecenia wyda³ u¿ytkownik i dostosowuje zachowanie robota do nich
+ * Wywoluje funkcje sprawdzajace stan konkretych bitow
 */
-
 void obslugaZdazen()
 {
 	sprawdzNitro();
@@ -254,9 +258,7 @@ void obslugaZdazen()
 			channelLeftStop();
 			channelRightStop();
 		}
-
 	//ten IF jest zbedny symuluje tylko tranzystor mosfet
-
 }
 
 //---------------------------------------------------------------------------
@@ -265,16 +267,15 @@ void obslugaZdazen()
  * 1 - Konfiguracja
  * 2 - StanPrzycisków
  * 3 - Zarz¹dzanie robotem
+ *
+ * Konfiguracja nastepuje tylko raz podczas startu, pozosta³e funkconalnosci realizowane sa co cykl
  */
 int obsluga_kontrolera(void)
 {
-
    //  Konfiguruje porty we/wy
    // Prze³¹czamy w tryb analogowy
 	if(!padConifgured)
 		pad_config();
 	padPoll();
 	obslugaZdazen();
-
-
 }
