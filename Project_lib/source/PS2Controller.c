@@ -158,7 +158,7 @@ void pad_config(void)
 	padGoIntoAnalogMode();
 	padExitConfigurationMode();
 	padPoll();
-	skala=0.85;
+	skala=0.7;
    padConifgured=true;
 
 }
@@ -190,7 +190,7 @@ void sprawdzNitro()
 	}
 	else
 	{
-		skala=1	;
+		skala=0.7	;
 		TIM4->CCR4=0;
 	}
 }
@@ -205,7 +205,7 @@ void turnOffPower()
 {
 	if(sprawdzBajt(CrossFunction,START ))
 	{
-		if(counterButton<0)//CO TO MA BYC :P
+		if(counterButton<0)//CO TO MA BYC :P MIA£ ELIMINOWAC DRGANIA NA STYKACH
 		{
 			//DEBUG
 			//PRAWDOPODBNIE TEN IF JEST ZBEDY
@@ -243,7 +243,7 @@ void turnOffPower()
  * Sprawdza jakie polecenia wyda³ u¿ytkownik i dostosowuje zachowanie robota do nich
  * Wywoluje funkcje sprawdzajace stan konkretych bitow
 */
-void obslugaZdazen()
+void obslugaZdazen()//ROZBIC NA FUNKCJE SPRAWDZAJACE STAN PRZYCISKOW I DZIALAJACE NA SILNIKACH
 {
 	sprawdzNitro();
 	turnOffPower();
@@ -272,10 +272,9 @@ void obslugaZdazen()
  */
 int obsluga_kontrolera(void)
 {
-   //  Konfiguruje porty we/wy
-   // Prze³¹czamy w tryb analogowy
 	if(!padConifgured)
 		pad_config();
 	padPoll();
+
 	obslugaZdazen();
 }

@@ -38,7 +38,9 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\Project_lib\include\Algorytm.h" lastModified="15c03ea61f1">
+      <source file="..\..\..\Project_lib\include\Algorytm.h" lastModified="15c3be9e94f">
+         <include file="..\..\..\Project_lib\include\TIMER.h"/>
+         <include file="..\..\..\Project_lib\include\Czujniki.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h" lastModified="15bf37df099">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
@@ -65,6 +67,10 @@
       </source>
       <source file="..\..\..\Project_lib\source\Czujniki.c" lastModified="15c357824c5">
          <include file="..\..\..\Project_lib\include\Czujniki.h"/>
+      </source>
+      <source file="..\..\..\Project_lib\source\EnginePower.c" lastModified="15c3bf2747a">
+         <include file="..\..\..\Project_lib\include\EnginePower.h"/>
+         <include file="..\..\..\Project_lib\include\Algorytm.h"/>
       </source>
       <source file="..\..\..\Project_lib\include\GPIO_Configuration.h" lastModified="15bf66c4fa7">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
@@ -98,8 +104,9 @@
       </source>
       <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="15af54db8d0">
       </source>
-      <source file="..\..\..\main.c" lastModified="15c3558bdb3">
+      <source file="..\..\..\main.c" lastModified="15c3be2d0a7">
          <include file="..\..\..\Project_lib\include\Interupt.h"/>
+         <include file="..\..\..\Project_lib\include\EnginePower.h"/>
          <include file="..\..\..\Project_lib\include\GPIO_Configuration.h"/>
          <include file="..\..\..\Project_lib\include\PS2Controller.h"/>
          <include file="..\..\..\Project_lib\include\ADC_Configuration.h"/>
@@ -110,20 +117,17 @@
       <source file="..\..\..\Project_lib\source\GPIO_Configuration.c" lastModified="15c34fb6701">
          <include file="..\..\..\Project_lib\include\GPIO_Configuration.h"/>
       </source>
-      <source file="..\..\..\Project_lib\include\EnginePower.h" lastModified="15c01b1a456">
+      <source file="..\..\..\Project_lib\include\EnginePower.h" lastModified="15c3be27e74">
          <include file="..\..\..\Project_lib\include\GPIO_Configuration.h"/>
          <include file="..\..\..\Project_lib\include\PS2Controller.h"/>
          <include file="..\..\..\Project_lib\include\Interupt.h"/>
       </source>
-      <source file="..\..\..\Project_lib\source\PS2Controller.c" lastModified="15c3485cba3">
+      <source file="..\..\..\Project_lib\source\PS2Controller.c" lastModified="15c3bee660e">
          <include file="..\..\..\Project_lib\include\PS2Controller.h"/>
          <include file="..\..\..\Project_lib\include\EnginePower.h"/>
       </source>
       <source file="..\..\..\Project_lib\include\Czujniki.h" lastModified="15c356634bf">
          <include file="..\..\..\Project_lib\include\Interupt.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\source\Algorytm.c" lastModified="15c060368b3">
-         <include file="..\..\..\Project_lib\include\Algorytm.h"/>
       </source>
       <source file="..\..\..\cmsis\core_cm4.h" lastModified="15af54db8d0">
          <include file="..\..\..\cmsis\core_cmInstr.h"/>
@@ -180,8 +184,6 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\Project_lib\include\Algorytm.h" lastModified="15c03ea61f1">
-      </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h" lastModified="15bf37df099">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
@@ -205,9 +207,6 @@
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_spi.h" lastModified="15af54dc8cb">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\Project_lib\source\Algorytm.c" lastModified="15c060368b3">
-         <include file="..\..\..\Project_lib\include\Algorytm.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="15af54db4d8">
       </source>
