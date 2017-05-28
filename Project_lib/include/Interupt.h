@@ -30,6 +30,7 @@ unsigned short probaPomiaruLeftForward;
 unsigned short probaPomiaruCenterForward;
 unsigned short probaPomiaruRightForward;
 ///////////////////////////////////////////////
+#define neutralDistance ((float)1);
 float odlegloscRightForward;
 float odlegloscCenterForward;
 float odlegloscLeftForward;

@@ -1,6 +1,7 @@
 #ifndef PS2Controller
 #define PS2Controller
 #include"GPIO_Configuration.h"
+#include"czujniki.h"
 #include<stdbool.h>
 #include "stm32f4xx_spi.h"
 int CMD;
@@ -23,6 +24,7 @@ uint8_t counterButton;
 int czyDostepnaJestZmiana;
 int Zasilanie;
 
+
 //Bity odpowiedzialne za konktetne przyciski
 enum KsztaltyITyl
 {
@@ -36,7 +38,7 @@ enum KsztaltyITyl
 	Square=7
 };
 enum KrzyzakFunction{
-	SELEC=0,
+	SELECT=0,
 	JOYR=1,
 	JOYL=2,
 	START=3,

@@ -24,7 +24,8 @@ int BO1;
 int BO2;
 
 
-int Odpychanie;
+int odpychanieLeft;
+int odpychanieRight;
 float skala;
 int WypelnienieRightAxis;
 int WypelnienieLeftAxis;

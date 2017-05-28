@@ -12,9 +12,9 @@ int zmiennaDebugujacaAdres;
 void defineGlobalVarablies()
 {
 	//PS2Controller.h
-	bool powerSuply=false;
-	bool availableChangePowerSuplyStatus=true;
-	uint8_t counterButton=0;
+	powerSuply=false;
+	availableChangePowerSuplyStatus=true;
+	counterButton=0;
 	int czyDostepnaJestZmiana = 0;
 	int Zasilanie = 0;
 
@@ -23,6 +23,9 @@ void defineGlobalVarablies()
 	probaPomiaruCenterForward=0;
 	probaPomiaruRightForward=0;
 
+
+	bool SensorON=false;
+	bool availableChangeSensroStatus=true;
 //	////////////////POPRAWIC TEN SYF
 //	motorLeft.PWMChannel=&(TIM4->CCR3);
 //	motorLeft.inputPort=GPIOE;
@@ -79,7 +82,7 @@ int main(void)
     	//stanLiniE10=GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_10);
     	//stanLiniE4=GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_4);
     	obsluga_kontrolera();
-    	//TIMER7CNT=TIM7->CNT;
+    	TIMER7CNT=TIM5->CNT;
     	pomiarADC();
     }
 }

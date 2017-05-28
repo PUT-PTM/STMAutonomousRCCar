@@ -169,11 +169,18 @@ bool sprawdzBajt(uint8_t poleWtablicy,uint8_t bajt)
 {
 	int maska=1;//Zmienic na zmienna globalna tutaj tylko przywracac wartosc
 	for(int i=0; i<bajt;i++)
+	{
 		maska*=2;
+	}
 	if((tabConfig[poleWtablicy]&maska) == 0)
+	{
 		return true;
+	}
 	else
+	{
 		return false;
+	}
+
 }
 //---------------------------------------------------------------------------
 //Dzia³a
@@ -186,12 +193,12 @@ void sprawdzNitro()
 	if(sprawdzBajt(Shape,R2))
 	{
 		skala=1;
-		TIM4->CCR4=TIM4->ARR;
+		//TIM4->CCR4=TIM4->ARR;
 	}
 	else
 	{
 		skala=0.7	;
-		TIM4->CCR4=0;
+		//TIM4->CCR4=0;
 	}
 }
 
@@ -240,6 +247,40 @@ void turnOffPower()
 }
 
 /*
+ *
+ */
+void turnOffSensor()
+{
+	if(sprawdzBajt(CrossFunction,SELECT ))
+	{
+		{
+			if(availableChangeSensroStatus)
+			{
+				if(SensorON)
+				{
+					SensorON=false;
+					TIM4->CCR4=0;
+
+				}
+				else
+				{
+					SensorON=true;
+					TIM_Cmd(TIM5,ENABLE);
+					TIM4->CCR4=TIM4->ARR;
+				}
+				availableChangeSensroStatus=false;
+			}
+		}
+	}
+	else
+	{
+		availableChangeSensroStatus=true;
+	}
+	CzujnikiAktywne=SensorON;
+	czyDostepnaJestZmianaSensor=availableChangeSensroStatus;
+}
+
+/*
  * Sprawdza jakie polecenia wyda³ u¿ytkownik i dostosowuje zachowanie robota do nich
  * Wywoluje funkcje sprawdzajace stan konkretych bitow
 */
@@ -247,7 +288,7 @@ void obslugaZdazen()//ROZBIC NA FUNKCJE SPRAWDZAJACE STAN PRZYCISKOW I DZIALAJAC
 {
 	sprawdzNitro();
 	turnOffPower();
-
+	turnOffSensor();
 		if(powerSuply&&AkumulatoryOK)
 		{
 			runMotorChannelRight();

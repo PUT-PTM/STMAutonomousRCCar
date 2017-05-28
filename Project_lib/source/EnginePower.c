@@ -92,8 +92,8 @@ void leftAxisUserCommand()
 void runMotorChannelLeft()
 {
 	leftAxisUserCommand();
-	Odpychanie=missColissionForLeftWheel();
-	directionChannelLeft(Odpychanie,WypelnienieLeftAxis);
+	odpychanieLeft=missColissionForLeftWheel();
+	directionChannelLeft(odpychanieLeft,WypelnienieLeftAxis);
 
 }
 
@@ -182,9 +182,9 @@ void rightAxisUserCommand()
 void runMotorChannelRight()
 {
 	rightAxisUserCommand();
-	Odpychanie=missColissionForRightWheel();
+	odpychanieRight=missColissionForRightWheel();
 
-	directionChannelRight(Odpychanie,WypelnienieRightAxis);
+	directionChannelRight(odpychanieRight,WypelnienieRightAxis);
 
 
 }

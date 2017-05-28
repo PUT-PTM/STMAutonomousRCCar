@@ -34,11 +34,39 @@ void uruchomPomiar()
 	rightForwardMeasureComplete=false;
 }
 
+
+/*
+ * USTAWIA NEUTRALNA WARTOSC
+ */
+void setNeutralValue()
+{
+	 leftForwardMeasureComplete=true;
+	 odlegloscLeftForward=neutralDistance;
+
+	 centerForwardMeasureComplete=true;
+	 odlegloscCenterForward=neutralDistance;
+
+	 rightForwardMeasureComplete=true;
+	 odlegloscRightForward=neutralDistance;
+}
+
+/*
+ * URUCHAMIA POMIAR W PRZYPADKU GDY CZUJNIK ZOSTA£ WY£¥CZONY USTAWIA ODLEGLOSCI NA NEUTRALNA WARTOSC
+ */
 void TIM5_IRQHandler(void)
 	{
 		 if(TIM_GetITStatus(TIM5, TIM_IT_Update) != RESET)
 		 {
-			 uruchomPomiar();
+			 if(!SensorON)
+			 {
+				 TIM_Cmd(TIM5,DISABLE);
+				 setNeutralValue();
+			 }
+			 else
+			 {
+				 uruchomPomiar();
+			 }
+
 			TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
 		 }
 	}
@@ -51,23 +79,27 @@ void TIM7_IRQHandler(void)
 
 	 if(TIM_GetITStatus(TIM7, TIM_IT_Update)!=RESET)
 	 {
-		 TIM_Cmd(TIM7, DISABLE);
-		 if(!leftForwardMeasureComplete)
+
 		 {
-			 leftForwardMeasureComplete=true;
-			 obstacleNoDetected(&odlegloscLeftForward,&probaPomiaruLeftForward);
+			 TIM_Cmd(TIM7, DISABLE);
+			 if(!leftForwardMeasureComplete)
+			 {
+				 leftForwardMeasureComplete=true;
+				 obstacleNoDetected(&odlegloscLeftForward,&probaPomiaruLeftForward);
+			 }
+			 if(!centerForwardMeasureComplete)
+			 {
+				 centerForwardMeasureComplete=true;
+				 obstacleNoDetected(&odlegloscCenterForward,&probaPomiaruCenterForward);
+			 }
+			 if(!rightForwardMeasureComplete)
+			 {
+				 rightForwardMeasureComplete=true;
+				 obstacleNoDetected(&odlegloscRightForward,&probaPomiaruRightForward);
+			 }
+			 TIM_ClearITPendingBit(TIM7, TIM_IT_Update);
 		 }
-		 if(!centerForwardMeasureComplete)
-		 {
-			 centerForwardMeasureComplete=true;
-			 obstacleNoDetected(&odlegloscCenterForward,&probaPomiaruCenterForward);
-		 }
-		 if(!rightForwardMeasureComplete)
-		 {
-			 rightForwardMeasureComplete=true;
-			 obstacleNoDetected(&odlegloscRightForward,&probaPomiaruRightForward);
-		 }
-		 TIM_ClearITPendingBit(TIM7, TIM_IT_Update);
+
 	 }
 
 }
