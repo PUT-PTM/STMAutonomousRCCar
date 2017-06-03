@@ -28,7 +28,8 @@ void measureDistance(float *Distance,GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, int
 				 temporaryDistance= (((((float)(*stop-*start))/(TIM7->ARR+1))/czestotliwoscTimeraPomiarowego)*170);
 				 if(temporaryDistance<0.05)
 				 {
-					 *Distance= 0.05;
+				//	 *Distance= 0.05;
+					 obstacleVeryClose(Distance,tryNumber);
 				 }
 				 else
 				 {
@@ -42,7 +43,24 @@ void measureDistance(float *Distance,GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, int
 }
 
 /*
- *
+ * Redukuje skoki pomiarowe gdy przeszkoda jest bardzo blisko
+ * (niweluje fale które odbi³y siê w niew³asciwy sposób i zak³ócaj¹ pomiar)
+ */
+void obstacleVeryClose(float *Distance,unsigned short *tryNumber)
+{
+	//Czyjniki sa mniej responsywne na szybkie pojawienie siê przeszkody w odleg³osci mniejszej ni¿ 5 cm
+	if(*tryNumber>4)
+		{
+			*Distance=veryCloseDistance;
+		}
+		else
+		{
+			*tryNumber=*tryNumber+1;
+		}
+}
+
+/*
+ *W przypadku braku wykrycia przeszkody (sygnale sie nie odbije itp) zapobiega szybim skokomm odleglosci.
  */
 void obstacleNoDetected(float *Distance,unsigned short *tryNumber)
 {
@@ -54,5 +72,4 @@ void obstacleNoDetected(float *Distance,unsigned short *tryNumber)
 	{
 		*tryNumber=*tryNumber+1;
 	}
-
 }

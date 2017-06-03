@@ -90,7 +90,7 @@ float missColisionLeftPartTwo()
 }
 
 /*
- *
+ * Sumuje si³e odpychajaca tak aby wysterowac lewe ko³o
  */
 float missColissionForLeftWheel()
 {
@@ -140,7 +140,7 @@ float missColisionRightPartTwo()
 	}
 }
 /*
- *
+ * Sumuje si³e odpychajaca tak aby wysterowac prawe ko³o
  */
 float missColissionForRightWheel()
 {
