@@ -63,7 +63,7 @@ void timer3Configuration()
 void TIM4Config()
 {
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
-	int freload =10000; 							//czas po którym nastepuje przepelnienie licznika
+	int freload =50000; 							//czas po którym nastepuje przepelnienie licznika
 	int Period=839; 							//pojemnosc liczika
 
 

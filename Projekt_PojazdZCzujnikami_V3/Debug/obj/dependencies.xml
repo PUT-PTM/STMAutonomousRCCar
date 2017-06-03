@@ -38,7 +38,7 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\Project_lib\include\Algorytm.h" lastModified="15c4c17acb1">
+      <source file="..\..\..\Project_lib\include\Algorytm.h" lastModified="15c4e70d4ef">
          <include file="..\..\..\Project_lib\include\TIMER.h"/>
          <include file="..\..\..\Project_lib\include\Czujniki.h"/>
       </source>
@@ -65,7 +65,7 @@
          <include file="..\..\..\cmsis_boot\system_stm32f4xx.h"/>
          <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
       </source>
-      <source file="..\..\..\Project_lib\source\Czujniki.c" lastModified="15c4bae8cbf">
+      <source file="..\..\..\Project_lib\source\Czujniki.c" lastModified="15c4e80c063">
          <include file="..\..\..\Project_lib\include\Czujniki.h"/>
       </source>
       <source file="..\..\..\Project_lib\source\EnginePower.c" lastModified="15c462b2c63">
@@ -112,7 +112,7 @@
          <include file="..\..\..\Project_lib\include\PS2Controller.h"/>
          <include file="..\..\..\Project_lib\include\ADC_Configuration.h"/>
       </source>
-      <source file="..\..\..\Project_lib\source\TIMER.c" lastModified="15c357e8191">
+      <source file="..\..\..\Project_lib\source\TIMER.c" lastModified="15c4e625500">
          <include file="..\..\..\Project_lib\include\TIMER.h"/>
       </source>
       <source file="..\..\..\Project_lib\source\GPIO_Configuration.c" lastModified="15c34fb6701">

@@ -46,7 +46,7 @@ void measureDistance(float *Distance,GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, int
  */
 void obstacleNoDetected(float *Distance,unsigned short *tryNumber)
 {
-	if(*tryNumber>5)
+	if(*tryNumber>8)
 	{
 		*Distance=neutralDistance;
 	}
