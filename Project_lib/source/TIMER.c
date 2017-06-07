@@ -1,4 +1,8 @@
 #include"TIMER.h"
+
+/*
+ *
+ */
 void uDelay(unsigned int delay)
 {
 	timeDelay=delay;
@@ -6,6 +10,10 @@ void uDelay(unsigned int delay)
 	TIM_Cmd(TIM2, ENABLE);
 	while(timeDelay>0);
 }
+
+/*
+ *
+ */
 void mDelay(unsigned int delay)
 {
 	timeDelay=delay*1000;
@@ -13,15 +21,18 @@ void mDelay(unsigned int delay)
 		TIM_Cmd(TIM2, ENABLE);
 		while(timeDelay>0);
 }
-//int calculatePresacler( int Period, int freload)
-//{
-//	return (_TAKTOWANIEZEGARA/(freload*(Period+1)))-1;
-//}
 
+/*
+ *
+ */
 int calculatePresacler( int Period, int  freload)
 {
 	return (_TAKTOWANIEZEGARA/(freload*(Period+1)))-1;
 }
+
+/*
+ *
+ */
 void timer2Configuration()
 {
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
@@ -41,6 +52,9 @@ void timer2Configuration()
 	TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
 }
 
+/*
+ *
+ */
 void timer3Configuration()
 {
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
@@ -60,6 +74,9 @@ void timer3Configuration()
 	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
 }
 
+/*
+ *
+ */
 void TIM4Config()
 {
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
@@ -76,6 +93,10 @@ void TIM4Config()
 	TIM_TimeBaseInit(TIM4, &TIM_TimeBaseStructure);
 
 }
+
+/*
+ *
+ */
 void Tim4_PWM_Configuration()
 {
 	//KONFIGURACJA PWM IMPORTANT!!!!!
@@ -98,6 +119,10 @@ void Tim4_PWM_Configuration()
 		TIM_OC4Init(TIM4, &TIM_OCInitStructure);
 		TIM_OC4PreloadConfig(TIM4, TIM_OCPreload_Enable);
 }
+
+/*
+ *
+ */
 void timer4Configuration()
 {
 	TIM4Config();
@@ -105,6 +130,9 @@ void timer4Configuration()
 
 }
 
+/*
+ *
+ */
 void timer5Configuration()
 {
 		RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5, ENABLE);
@@ -124,6 +152,9 @@ void timer5Configuration()
 				TIM_ITConfig(TIM5, TIM_IT_Update, ENABLE);
 }
 
+/*
+ *
+ */
 void timer7Configuration()
 {
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM7, ENABLE);
@@ -146,6 +177,9 @@ void timer7Configuration()
 		czestotliwoscTimeraPomiarowego=84000000/((Period+1)*(Plescaler+1));
 }
 
+/*
+ *
+ */
 void timerConfiguration()
 {
 	timer2Configuration();

@@ -96,6 +96,7 @@ void padPoll()
 	mDelay(50);
 
 }
+
 /*
  * Wymusza przejscie pada do trybu analogowego
  * Umozliwa korzystanie z analogow z funkconalnoscia przechwycenia stopnia wychlenia

@@ -28,7 +28,6 @@ void measureDistance(float *Distance,GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, int
 				 temporaryDistance= (((((float)(*stop-*start))/(TIM7->ARR+1))/czestotliwoscTimeraPomiarowego)*170);
 				 if(temporaryDistance<0.05)
 				 {
-				//	 *Distance= 0.05;
 					 obstacleVeryClose(Distance,tryNumber);
 				 }
 				 else

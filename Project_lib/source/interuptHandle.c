@@ -1,6 +1,9 @@
 #include "interupt.h"
 #include"czujniki.h"
 
+/*
+ *
+ */
 void TIM2_IRQHandler(void)
 {
 	 if(TIM_GetITStatus(TIM2, TIM_IT_Update)!=RESET)
@@ -12,6 +15,9 @@ void TIM2_IRQHandler(void)
 	 }
 }
 
+/*
+ *
+ */
 void TIM3_IRQHandler(void)
 {
 	 if(TIM_GetITStatus(TIM3, TIM_IT_Update)!=RESET)
@@ -25,6 +31,9 @@ void TIM3_IRQHandler(void)
 	 }
 }
 
+/*
+ *
+ */
 void uruchomPomiar()
 {
 	TIM_Cmd(TIM3, ENABLE);
@@ -104,6 +113,9 @@ void TIM7_IRQHandler(void)
 
 }
 
+/*
+ *
+ */
 void EXTI9_5_IRQHandler(void)
 {
 	if(EXTI_GetITStatus(EXTI_Line5) != RESET)
@@ -118,6 +130,9 @@ void EXTI9_5_IRQHandler(void)
 	}
 }
 
+/*
+ *
+ */
 void EXTI4_IRQHandler(void)
 {
 	if(EXTI_GetITStatus(EXTI_Line4) != RESET)

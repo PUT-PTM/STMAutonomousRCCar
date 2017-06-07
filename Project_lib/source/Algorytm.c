@@ -11,13 +11,14 @@ float pow(float a, int b)
 	}
 	return result;
 }
-bool colisionForwardDetect;
-int direction;
+
+/*
+ * Decyduje w ktora strone ma sie obrocic pojazd
+ * input 1/2 w zaleznosci od tego w ktorej czesci 2 algorytmu jest wywolane
+ *  odpowiada odczytowi lewgo lub prawego czujnika
+ */
 float decide(float input1,float input2)
 {
-
-	//direction=(input1-input2);
-
 	if(input1>input2)
 	{
 		return 1;
@@ -27,20 +28,20 @@ float decide(float input1,float input2)
 		return -2;
 	}
 }
- int debugColisionForward;
+
+int debugColisionForward;
+
+/*
+ * G³ówna czesc algotyrmu wykrywajaca przeszkody z przodu.
+ * Decyduje rowniez czy nalezy zmienic tryb na gwaltowne omijanie przeszkod
+ */
 float missColisionPartOne()
 {
 	debugColisionForward=colisionForwardDetect;
-//	if((odlegloscRightForward<zmiennaDoAlgorytmu3)||(odlegloscLeftForward<zmiennaDoAlgorytmu3))
-//	{
-//			colisionForwardDetect=true;
-//	}
-//	else
 	{
 		if(zmiennaDoAlgorytmu>odlegloscCenterForward)
 
 			{
-		//			colisionForwardDetect=true;
 				if(zmiennaDoAlgorytmu2>odlegloscCenterForward)
 				{
 					colisionForwardDetect=true;
@@ -59,10 +60,15 @@ float missColisionPartOne()
 	}
 }
 
+/*
+ * Debug
+ */
 int debugChoseLeft;
 int debugChoseLeftDirect;
 
-
+/*
+ * Obliczanie si³y odpychajacej dla lewego kola
+ */
 float missColisionLeftPartTwo()
 {
 	if(colisionForwardDetect)
@@ -70,22 +76,10 @@ float missColisionLeftPartTwo()
 		debugChoseLeftDirect = (decide(odlegloscLeftForward,odlegloscRightForward));
 		debugChoseLeft=(debugChoseLeftDirect*TIM4->ARR);
 			return debugChoseLeft;
-			//return 2*(TIM4->ARR*1*(float)((zmiennaDoAlgorytmu-odlegloscRightForward)/zmiennaDoAlgorytmu));
 		}
 	else if((zmiennaDoAlgorytmu-odlegloscRightForward>0))
 		{
-//			if(zmiennaDoAlgorytmu3>odlegloscRightForward)
-//			{
-//				//Troche redundancji pozbyc sie tego
-//				debugChoseLeftDirect = (decide(odlegloscLeftForward,odlegloscRightForward));
-//				debugChoseLeft=(debugChoseLeftDirect*TIM4->ARR);
-//				return debugChoseLeft;
-//
-//			}
-//			else
-//			{
-				return (0.5*(TIM4->ARR*1*(float)((zmiennaDoAlgorytmu-odlegloscRightForward)/zmiennaDoAlgorytmu)));
-//			}
+			return (0.5*(TIM4->ARR*1*(float)((zmiennaDoAlgorytmu-odlegloscRightForward)/zmiennaDoAlgorytmu)));
 		}
 }
 
@@ -97,46 +91,22 @@ float missColissionForLeftWheel()
 	return (missColisionPartOne()+ missColisionLeftPartTwo());
 }
 
-//float missColisionPartOne()
-//{
-//	if(zmiennaDoAlgorytmu2-odlegloscCenterForward>0)
-//		{
-//			colisionForwardDetect=true;
-//			return (TIM4->ARR*1*(float)((zmiennaDoAlgorytmu-odlegloscCenterForward)/zmiennaDoAlgorytmu));
-//		}
-//		else
-//		{
-//			colisionForwardDetec=false;
-//		}
-//}
-
-
 int debugChoseRight;
 int debugChoseRightDirect;
+/*
+ * Obliczanie sily odpychajacej prawe kolo
+ */
 float missColisionRightPartTwo()
 {
-	//if((zmiennaDoAlgorytmu-odlegloscLeftForward>0)&&colisionForwardDetect)
-
-	if(colisionForwardDetect)
+		if(colisionForwardDetect)
 		{
 		debugChoseRightDirect=(decide(odlegloscRightForward,odlegloscLeftForward));
 		debugChoseRight= (debugChoseRightDirect*TIM4->ARR);
 			return debugChoseRight;
-			//return 2*(TIM4->ARR*1*(float)((zmiennaDoAlgorytmu-odlegloscLeftForward)/zmiennaDoAlgorytmu));
 		}
 	else if((zmiennaDoAlgorytmu-odlegloscLeftForward>0))
 	{
-//		if(zmiennaDoAlgorytmu3>odlegloscLeftForward)
-//		{
-//			//Troche redundancji pozbyc sie tego
-//			debugChoseRightDirect=(decide(odlegloscRightForward,odlegloscLeftForward));
-//					debugChoseRight= (debugChoseRightDirect*TIM4->ARR);
-//						return debugChoseRight;
-//		}
-//		else
-//		{
 			return (0.5*(TIM4->ARR*1*(float)((zmiennaDoAlgorytmu-odlegloscLeftForward)/zmiennaDoAlgorytmu)));
-//		}
 	}
 }
 /*
